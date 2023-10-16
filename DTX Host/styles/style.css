@@ -1,0 +1,457 @@
+/*Reset da pagina*/
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica;
+    box-sizing: border-box;
+    /* Aqui foi ultilizado o border-box para os inputs respeitarem as larguras maximas das div pais*/
+}
+
+/*Titulos*/
+h1,
+h2,
+h3 {
+    color: #333;
+}
+
+p {
+    color: #70747a;
+}
+
+/*Navbar - Barra de navegação*/
+
+.navbar-container {
+    width: 100%;
+    height: 80px;
+    background-color: #232a31;
+    padding: 0 2rem;
+}
+
+nav {
+    position: relative;
+}
+
+.logo {
+    width: 50px;
+    margin-top: 15px;
+    border-radius: 10px;
+}
+
+.navbar-items {
+    /*movendo as ul da navbar para a direita*/
+    position: absolute;
+    right: 0;
+    height: 80px;
+    line-height: 80px;
+    margin: 0;
+    display: inline-block;
+}
+
+.navbar-items li {
+    display: inline-block;
+    /*transformando os li para inline block para que fiquem lado a lado*/
+    text-transform: uppercase;
+    margin-left: 25px;
+}
+
+.navbar-items a {
+    /*modificando estilo e efeito de transiçao dos links no navbar-itens*/
+    color: #fff;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.navbar-items a:hover {
+    /*Adicionando a nova cor dos links para o efeito de hover*/
+    color: #ccc;
+}
+
+.default-btn {
+    padding: 15px 20px;
+    background-color: #2cc76a;
+    border-radius: 5px;
+}
+
+.navbar-items .default-btn:hover {
+    background-color: #22bb5f;
+    color: #fff;
+}
+
+
+/*Main banner - Banner principal*/
+
+.main-banner {
+    background-image: url(../Assets/mainbanner.png);
+    background-size: cover;
+    background-position: center;
+    padding: 10rem 0;
+
+}
+
+.main-banner h1,
+.main-banner p {
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: #000 3px 2px 3px;
+    /*Sombra no texto para melhorar a leitura, Parametros: 3px de deslocamento vertical, 2px horizontal, 3px espalhamento*/
+}
+
+.main-banner h1 {
+    font-size: 54px;
+}
+
+.main-banner p {
+    font-size: 32px;
+}
+
+/*Services - Serviços */
+
+.services-container {
+    padding: 5rem 0;
+}
+
+.services-container ul {
+    display: flex;
+    /*Aplicando o display flex na section*/
+    width: 90%;
+    /*Definindo a largura para 90% da section */
+    margin: 0 auto;
+    /*Aplicando a margem 0 auto para que o conteudo se centralize automaticamente*/
+}
+
+.services-container li {
+    /* grow 1 forma com que o elemento vai crescer quando a pagina aumentar,  basis definindo a largura base para 200px */
+    flex: 1 1 200px;
+    /*Definindo um tamanho base para os li e definindo como se comportarão ao aumentar e diminuir a pg, parametros: 1 grow, 1 shrink 200px basis    */
+    list-style: none;
+    text-align: center;
+    padding: 20px;
+}
+
+.fas {
+    /*Icones */
+    font-size: 60px;
+    /**/
+    margin-bottom: 15px;
+}
+
+.fa-shield-alt {
+    /*Icone escudo */
+    color: #2cc76a;
+}
+
+.fa-rocket {
+    /*Icone foguete */
+    color: #ef3f29;
+}
+
+.fa-comments {
+    color: #ef8f29;
+}
+
+.services-container h3 {
+    margin-bottom: 25px;
+}
+
+.services-container p {
+    line-height: 24px;
+    /*Afastando a distancia entre as linhas do paragrafo*/
+}
+
+/*Prices and plans - Preços e planos */
+
+.pricing-container {
+    padding-bottom: 5rem;
+    /* afastando das proximas seções*/
+    text-align: center;
+}
+
+.pricing-container h2 {
+    font-size: 36px;
+}
+
+.pricing-container p {
+    font-size: 20px;
+}
+
+.plans-container {
+    display: flex;
+    /* colocando os itens do container um ao lado do outro*/
+    justify-content: space-between;
+    /*espaçando os itens igualmente*/
+    width: 90%;
+    /*definindo o tamanho do container para 90%*/
+    margin: 50px auto 0;
+    /*definindo 50px para cima  e 0 auto para as laterais para centralizar o conteudo já que tem 90% de largura.*/
+}
+
+.plan {
+    flex: 1;
+    /*padronizando os itens para que tenham o mesmo tamanho*/
+    max-width: 275px;
+    /*Limitando a largura maxima dos elementos para 275px*/
+    margin: 0 20px;
+    /*Afastando lateralmente uns dos outros*/
+}
+
+.plan ul {
+    padding: 0;
+    /*zerando o padding da lista*/
+}
+
+.plan li {
+    list-style: none;
+    /*Retirando os bullets das li*/
+    height: 50px;
+    /*aplicando uma altura de 50px a cada item da lista*/
+    line-height: 50px;
+    background-color: #e8e9ea;
+    color: #333;
+
+}
+
+.plan .price {
+    /*Preço*/
+    width: 120px;
+    /*alterando a largura do price*/
+    height: 120px;
+    /*alterando a altura do price*/
+    border-radius: 50%;
+    background-color: #2cc762;
+    color: #fff;
+    text-align: center;
+    line-height: 120px;
+    /*alinhado o texto*/
+    margin: 0 auto -50px;
+    /*Cortando a bolinha verde do preço com o valor -50px*/
+    font-size: 18px;
+    position: relative;
+    /*colocando o elemento acima da lista, agora ela não está mais cortada ao meio*/
+}
+
+.plan .plan-name {
+    /*Nome do plano*/
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #202b34;
+    padding: 50px 0;
+    /*add espacamento interior, cima, baixo*/
+
+
+}
+
+.plan .plan-btn {
+    background-color: #2cc762;
+    color: #fff;
+    font-size: 24px;
+    height: 75px;
+    line-height: 75px;
+    /*novamente utilizamos os mesmos valores de height e line-height para alinhar o texto*/
+    cursor: pointer;
+
+}
+
+.plan .recomended {
+    /*modificando o plano recomendado*/
+    background-color: #f45c57;
+}
+
+/*searchdomain - Procurar domínio*/
+
+.searchdomain-container {
+    background-color: #34454e;
+    text-align: center;
+    padding: 5rem 0;
+}
+
+.searchdomain-container h2 {
+    color: #fff;
+    font-size: 42px;
+    margin-bottom: 15px;
+
+}
+
+.searchdomain-container p {
+    color: #d5d5d5;
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+.searchdomain-container input {
+    display: block;
+    border: none;
+    border-radius: 6px;
+    margin: 0 auto;
+}
+
+.searchdomain-container input[type="text"] {
+    width: 60%;
+    padding: 20px;
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.searchdomain-container input[type="submit"] {
+    background-color: #2cc76a;
+    padding: 15px 30px;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    opacity: 0.8;
+    /*definições para o hover*/
+}
+
+.searchdomain-container input[type="submit"]:hover {
+    opacity: 1;
+}
+
+/*Contact form - formulario de contato*/
+
+.contact-container {
+    text-align: center;
+    padding: 5rem 0 2rem 0;
+}
+
+.contact-container h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.contact-container p {
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+.contact-container input,
+.contact-container textarea {
+    width: 200px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin: 0 10px 20px;
+}
+
+.contact-container textarea {
+    /*deixamos o textarea com o display-block e definimos os tamanhos*/
+    display: block;
+    margin: 0 auto 20px;
+    width: 470px;
+    height: 150px;
+    resize: none;
+    /*bloqueamos a opção de resize, assim o usuario não quebra o layout da pagina*/
+}
+
+.contact-container input[type="submit"] {
+    display: block;
+    margin: 0 auto;
+    background-color: #2cc76a;
+    color: #fff;
+    cursor: pointer;
+}
+
+/*Footer*/
+footer {
+    text-align: center;
+    font-weight: bold;
+    margin: 50px 0 30px;
+}
+
+/*Responsividade*/
+
+/*Small laptops apartir de 1100px*/
+
+@media (max-width: 1100px) {
+    .plans-container {
+        width: 95%;
+    }
+
+    .plan {
+        margin: 0 5px;
+    }
+}
+
+/*Tablet 900px*/
+
+@media (max-width: 900px) {
+    .main-banner p {
+        padding: 0 6rem;
+    }
+
+    .searchdomain-container {
+        padding: 2rem 4rem;
+    }
+}
+
+
+/*Celular 576px*/
+
+@media (max-width: 576px) {
+    html,
+    body{
+        overflow-x: hidden; /*escondendo tudo que passar do tamanho da tela no eixo x*/
+    }
+
+    .navbar-items li{
+        font-size: 12px;  /*redefinindo o tamanho das fontos do li */
+        margin-left: 10px; /*redefinindo o tamanho da margem*/
+    }
+
+    .main-banner p{
+        padding: 0 2rem; /* redefinindo o padding do paragrafo*/
+    }
+
+    .services-container ul{ 
+        flex-direction: column; /*redefinindo os itens da ul para ficar em colunas */
+
+    }
+
+    .plans-container {
+        flex-direction: column; /*mudando a direção do container para ficar um item abaixo do outro*/
+        width: 100%;
+        padding: 0 2rem; /*adcionando um padding no container para deixar os elementos afastados das laterais*/
+    }
+
+    .plan {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 15px; /*Afastando os itens uns dos outros*/
+    }
+
+    .searchdomain-container h2{
+        font-size: 28px;
+    }
+
+    .searchdomain-container input[type="text"]{
+        width: 100%;
+    }
+
+
+    .contact-container{
+        padding: 3rem 2rem;
+    }
+
+    .contact-container input,
+    .contact-container textarea {
+        width: 100%; /*readefinindo o tamanho para 100% da tela antes estava definido para 470px*/
+        margin: 10px 0;
+    }
+}
+
+/*Iphone 375px*/
+
+@media (max-width: 390px){
+    
+    .navbar-items li{
+        margin-left: 2px; /*alterando o tamanho da margem para 2px*/
+        font-size: 11px;  /*redefinindo a fonte para 11px*/
+    }
+}
+
+/*
+Ainda devo fazer atualizações para o Samsung Galaxy Fold
+*/
